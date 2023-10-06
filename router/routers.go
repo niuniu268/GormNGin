@@ -1,9 +1,9 @@
 package router
 
 import (
-	"net/http"
-
+	"GinNGorm/controllers"
 	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 func Router() *gin.Engine {
@@ -19,30 +19,39 @@ func Router() *gin.Engine {
 	user := r.Group("/user")
 	{
 
-		user.POST("/update", func(context *gin.Context) {
-
-			context.JSON(http.StatusOK, gin.H{
-				"message": "update user",
-			})
-
-		})
-
-		user.PUT("/add", func(context *gin.Context) {
-
-			context.JSON(http.StatusOK, gin.H{
-				"message": "add user",
-			})
-
-		})
-		user.DELETE("/delete", func(context *gin.Context) {
-
-			context.JSON(http.StatusOK, gin.H{
-				"message": "delete user",
-			})
-
-		})
+		//user.POST("/update", func(context *gin.Context) {
+		//
+		//	context.JSON(http.StatusOK, gin.H{
+		//		"message": "update user",
+		//	})
+		//
+		//})
+		//
+		//user.PUT("/add", func(context *gin.Context) {
+		//
+		//	context.JSON(http.StatusOK, gin.H{
+		//		"message": "add user",
+		//	})
+		//
+		//})
+		//user.DELETE("/delete", func(context *gin.Context) {
+		//
+		//	context.JSON(http.StatusOK, gin.H{
+		//		"message": "delete user",
+		//	})
+		//
+		//})
+		user.GET("/info/:id", controllers.UserController{}.GerUserInfo)
+		user.POST("/list", controllers.UserController{}.GetUserList)
 
 	}
+
+	order := r.Group("/order")
+	{
+		order.POST("/list", controllers.OrderController{}.GetOderList)
+	}
+
+	//r.Run(":9999")
 
 	return r
 }
