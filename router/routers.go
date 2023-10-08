@@ -41,8 +41,10 @@ func Router() *gin.Engine {
 		//	})
 		//
 		//})
-		user.GET("/info/:id", controllers.UserController{}.GerUserInfo)
-		user.POST("/list", controllers.UserController{}.GetUserList)
+		user.GET("/info/:id", controllers.UserController{}.GetUserInfo)
+		user.POST("/add", controllers.UserController{}.AddUser)
+		user.PUT("/update", controllers.UserController{}.UpdateUser)
+		user.DELETE("/info/:id", controllers.UserController{}.DeleteUser)
 
 	}
 
