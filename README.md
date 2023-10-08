@@ -22,20 +22,32 @@ familiar with language of mysql.
 
 ## Gin (port: 9999)
 ```
-	"github.com/gin-gonic/gin"
-	"net/http"
+"github.com/gin-gonic/gin"
+"net/http"
 ```
 
 ```
- go get -u github.com/gin-gonic/gin
+go get -u github.com/gin-gonic/gin
 ```
+
+![terminal](https://github.com/niuniu268/GormNGin/blob/master/img/terminal.png?raw=true)
+
+1. apply GET function
+    ![terminal](https://github.com/niuniu268/GormNGin/blob/master/img/get.png?raw=true)
+2. apply POST function
+    ![terminal](https://github.com/niuniu268/GormNGin/blob/master/img/post.png?raw=true)
+3. apply PUT function
+    ![terminal](https://github.com/niuniu268/GormNGin/blob/master/img/put.png?raw=true)
+4. apply DELETE function
+    ![terminal](https://github.com/niuniu268/GormNGin/blob/master/img/delete.png?raw=true)
+
 
 ## Logrus
 
 ```
-	"github.com/sirupsen/logrus"
+"github.com/sirupsen/logrus"
 ```
 
 ```
- go get github.com/sirupsen/logrus
+go get github.com/sirupsen/logrus
 ```
